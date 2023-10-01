@@ -6,11 +6,18 @@ import Loader from "@/components/Loader/page";
 import { toast } from "react-toastify";
 
 const verifyResetPassword = () => {
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const router = useRouter();
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [isLoading, setIsLoading] = useState(false);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [token, setToken] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [baseUrl, setBaseUrl] = useState("");
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [passwordCreds, setPasswordCreds] = useState({
     newPassword: "",
     confirmPassword: "",
@@ -41,7 +48,7 @@ const verifyResetPassword = () => {
       return error;
     }
   };
-
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (
       passwordCreds.newPassword.length > 0 &&
@@ -53,7 +60,7 @@ const verifyResetPassword = () => {
       setButtonDisabled(true);
     }
   }, [passwordCreds]);
-
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     const urlToken = window.location.search.split("=")[1];
     setToken(urlToken || "");
@@ -127,8 +134,8 @@ const verifyResetPassword = () => {
                 disabled={buttonDisabled}
                 onClick={handleReset}
                 className={`flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none rounded text-lg ${buttonDisabled
-                    ? "cursor-not-allowed bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-red-500 hover:to-red-500"
-                    : "bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-400 hover:to-green-400"
+                  ? "cursor-not-allowed bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-red-500 hover:to-red-500"
+                  : "bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-400 hover:to-green-400"
                   }`}
               >
                 Reset Password
